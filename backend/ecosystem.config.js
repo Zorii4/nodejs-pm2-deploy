@@ -31,19 +31,9 @@ module.exports = {
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
 
-      'pre-deploy-local': `
-        ssh ${DEPLOY_USER}@${DEPLOY_HOST} "mkdir -p ${DEPLOY_PATH}/shared" &&
-        scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/shared/.env &&
-        scp ./.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/shared/.env.deploy
-      `,
+      'pre-deploy-local': `ssh ${DEPLOY_USER}@${DEPLOY_HOST} "mkdir -p ${DEPLOY_PATH}/shared" && scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/shared/.env && scp ./.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/shared/.env.deploy`,
 
-      'post-deploy': `
-        cd ${DEPLOY_PATH}/current/backend &&
-        cp ${DEPLOY_PATH}/shared/.env .env &&
-        cp ${DEPLOY_PATH}/shared/.env.deploy .env.deploy &&
-        npm i &&
-        pm2 startOrReload ecosystem.config.js --env production
-      `,
+      'post-deploy': `cd ${DEPLOY_PATH}/current/backend && cp ${DEPLOY_PATH}/shared/.env .env && cp ${DEPLOY_PATH}/shared/.env.deploy .env.deploy && npm i && pm2 startOrReload ecosystem.config.js --env production`,
     },
   },
 };
