@@ -10,7 +10,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'https://github.com/Zorii4/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
-      'post-deploy': 'cd frontend && npm i && npm run build',
+      'post-deploy': 'cd /home/zori4/frontend/source/frontend && npm i && npm run build',
     },
   },
 };
