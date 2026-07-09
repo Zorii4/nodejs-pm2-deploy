@@ -1,9 +1,11 @@
-import { ObjectId } from 'mongoose';
+export {};
 
-declare global{
-    namespace Express {
-        interface Request {
-            user: { _id: string }
-        }
+declare global {
+  namespace Express {
+    interface Request {
+      user: {
+        _id: string;
+      };
     }
+  }
 }

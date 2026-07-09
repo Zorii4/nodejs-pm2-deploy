@@ -17,12 +17,13 @@
     /* Completeness */
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "typeRoots": [
-      "@types",
+      "./@types",
       "./node_modules/@types",
     ],
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "@types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"
