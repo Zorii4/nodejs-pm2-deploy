@@ -139,7 +139,7 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('http://84.252.136.65:3000');
+  const api = new Api('https://api-zori4-mesto.nomorepartiessite.ru')
   
   export default api;
   
