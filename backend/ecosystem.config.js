@@ -1,10 +1,8 @@
-require('dotenv').config({ path: '.env.deploy' });
-const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF } = process.env;
-
 module.exports = {
   apps: [{
     name: 'mesto-backend',
-    script: '/home/zori4/backend/source/backend/app.js',
+    script: '/home/zori4/backend/source/backend/src/app.ts',
+    interpreter: 'ts-node',
   }],
   deploy: {
     production: {
