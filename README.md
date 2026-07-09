@@ -1,3 +1,7 @@
-# Деплой приложения на сервер с использованием pm2
+## Ссылки на проект
 
-Стартеркит проекта по автоматизации деплоя фронтенда и бэкенда при помощи pm2 (pm2 deploy)
+IP адрес 84.252.136.65
+
+Frontend https://zori4-mesto.nomorepar.nomorepartiessite.ru
+
+Backend https://api-zori4-mesto.nomorepartiessite.ru
