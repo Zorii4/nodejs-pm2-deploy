@@ -19,6 +19,7 @@ module.exports = {
       interpreter: './node_modules/.bin/ts-node',
       env_production: {
         NODE_ENV: 'production',
+        TS_NODE_FILES: 'true',
       },
     },
   ],
