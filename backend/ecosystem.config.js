@@ -2,7 +2,7 @@ module.exports = {
   apps: [{
     name: 'mesto-backend',
     script: '/home/zori4/backend/source/backend/src/app.ts',
-    interpreter: 'ts-node',
+    interpreter: '/home/zori4/backend/source/backend/node_modules/.bin/ts-node',
   }],
   deploy: {
     production: {
