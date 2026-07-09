@@ -9,7 +9,7 @@ module.exports = {
   apps: [{
     name: 'mesto-backend',
     script: `${DEPLOY_PATH}/source/backend/src/app.ts`,
-    interpreter: `${DEPLOY_PATH}/source/backend/node_modules/.bin/ts-node`,
+    interpreter: `${DEPLOY_PATH}/source/backend/node_modules/.bin/ts-node --transpile-only`,
   }],
   deploy: {
     production: {
