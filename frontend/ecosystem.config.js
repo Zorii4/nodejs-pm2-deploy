@@ -1,4 +1,6 @@
-require('dotenv').config({ path: '.env.deploy' });
+const path = require('path');
+
+require('dotenv').config({ path: path.resolve(__dirname, '.env.deploy') });
 
 const {
   DEPLOY_USER,
@@ -6,6 +8,7 @@ const {
   DEPLOY_PATH,
   DEPLOY_REF,
   DEPLOY_REPO,
+  REACT_APP_API_URL,
 } = process.env;
 
 module.exports = {
@@ -19,7 +22,7 @@ module.exports = {
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
 
-      'post-deploy': `cd ${DEPLOY_PATH}/current/frontend && npm i && NODE_OPTIONS=--openssl-legacy-provider npm run build`,
+      'post-deploy': `cd ${DEPLOY_PATH}/current/frontend && npm i && REACT_APP_API_URL=${REACT_APP_API_URL} NODE_OPTIONS=--openssl-legacy-provider npm run build`,
     },
   },
 };

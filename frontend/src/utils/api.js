@@ -138,8 +138,7 @@ class Api {
       .then(getResponse)
   }
   }
-  // Замените на адрес вашего бэкенда
-  const api = new Api('https://api-zori4-mesto.nomorepartiessite.ru')
+  const api = new Api(process.env.REACT_APP_API_URL)
   
   export default api;
   
