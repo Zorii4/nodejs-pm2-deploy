@@ -27,22 +27,9 @@ app.use(cors({
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
 }));
 
-// Только для локальных тестов. Не используйте это в продакшене
-// app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
-// Удалить после ревью!
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-
-  setTimeout(() => {
-    process.exit(1);
-  }, 100);
-});
 
 app.use(routes);
 app.use(errors());
